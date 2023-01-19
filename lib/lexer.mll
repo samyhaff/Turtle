@@ -14,4 +14,7 @@ rule read =
     | "back" { BACK }
     | "left" { LEFT }
     | "right" { RIGHT }
+    | "repeat" { REPEAT }
+    | "[" { LBRACKET }
+    | "]" { RBRACKET }
     | eof { EOF }

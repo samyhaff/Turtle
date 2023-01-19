@@ -6,3 +6,4 @@ type dir =
 
 type expr =
     | Move of dir * int
+    | Repeat of int * expr

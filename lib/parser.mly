@@ -7,6 +7,9 @@ open Ast
 %token LEFT
 %token RIGHT
 %token BACK
+%token REPEAT
+%token LBRACKET
+%token RBRACKET
 %token <int> INT
 
 %start <expr> prog
@@ -22,4 +25,5 @@ expr:
     | BACK ; i = INT { Move (Back, i) }
     | LEFT ; i = INT { Move (Left, i) }
     | RIGHT; i = INT { Move (Right, i) }
+    | REPEAT; i = INT; LBRACKET; e = expr; RBRACKET { Repeat (i, e) }
     ;
